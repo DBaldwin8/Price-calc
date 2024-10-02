@@ -1,28 +1,33 @@
 'use strict'
 
-const pageViews = function (pageCountValue) {
-    if (pageCountValue === '10k') {
+const getPageViews = function (pageCountValue) {
+    if (pageCountValue === 0) {
         return '10k PAGEVIEWS';
-    } else if (pageCountValue ===  '50k') {
+    } else if (pageCountValue ===  1) {
         return '50K PAGEVIEWS';
-    } else if (pageCountValue === '100k') {
+    } else if (pageCountValue === 2) {
         return '100K PAGEVIEWS';
-    } else if (pageCountValue === '500k') {
+    } else if (pageCountValue === 3) {
         return '500K PAGEVIEWS';
-    } else if (pageCountValue === '1M') {
+    } else if (pageCountValue === 4) {
         return '1M PAGEVIEWS';
     }
 }
 
-let pageViewElement = document.querySelector('.slider');
-let pageViewRetrieve = pageViewElement.addEventListener('change', () => {
-    return pageViews(pageViewElement.getAttribute('value'));
+const pageViewSelector = document.querySelector('#page-views');
 
+let pageViewElement = document.querySelector('#slider');
+
+let pageViewRetrieve = pageViewElement.addEventListener('change', () => {
+    let pageViews = getPageViews(pageViewElement.value);
+    pageViewSelector.textContent = `${pageViews}`;
 })
 
-let yearlyDiscountRetrieve = document.querySelector('.checkbox').checked;
-const price = function (pageViewsSelected, yearlyDiscoutChecked) {
-    let price = undefined;
+const PRICE = function (pageViewsSelected,) {
+    let price;
+    
+    let yearlyDiscountRetrieve = document.querySelector('.checkbox').checked;
+
     if (pageViewsSelected === '10k') {
         price = 8;
     } else if (pageViewsSelected ===  '50k') {
@@ -35,12 +40,16 @@ const price = function (pageViewsSelected, yearlyDiscoutChecked) {
         price = 36;
     }
 
-    if (yearlyDiscoutChecked) {
+    if (yearlyDiscountRetrieve) {
         return price = (price*12)*0.75;
     } else {
         return price;
     }
 }
 
-console.log(pageViews('50k'));
-console.log(price('50k', true));
+console.log(getPageViews('50k'));
+console.log(PRICE('50k', true));
+
+
+let pricePerSelector = document.querySelector('.price-per');
+pricePerSelector.textContent

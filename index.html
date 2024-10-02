@@ -16,28 +16,18 @@
             <div class="calc-container">
                 <form>
                     <div class="view-price-container">
-                        <div class="page-views">
+                        <div class="page-views-container">
                             <!-- page view count linked to slider/radios "pageviews"-->
+                             <h3 id="page-views"></h3>
                         </div>
-                        <div class="price-per">
+                        <div class="price-per-container">
                             <!-- price display linked with slider/radios "/month" OR "/year" -->
+                             <h3 class="price-per"></h3>
                         </div>
                     </div>
                     <div class="slider-container">
-                        <label for="10k">10K</label>
-                        <input class="slider" type="radio" id="10k" name="slider" value="10k">
-    
-                        <label for="50k">50K</label>
-                        <input class="slider" type="radio" id="50k" name="slider" value="50k">
-    
-                        <label for="100k">100k</label>
-                        <input class="slider" type="radio" id="100k" name="slider" value="100k">
-    
-                        <label for="500k">500K</label>
-                        <input class="slider" type="radio" id="500k" name="slider" value="500m">
-                        
-                        <label for="1m">1M</label>
-                        <input class="slider" type="radio" id="1m" name="slider" value="1m">
+                        <label for="slider"></label>
+                        <input type="range" min="0" max="4" value="2" class="slider" id="slider" name="slider">
                     </div>
                     <div class="toggle-container">
                         <!-- toggle-->
