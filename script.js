@@ -1,46 +1,46 @@
 'use strict'
 
-let pageViewElement = document.querySelector('.slider');
-let pageViewRetrieve = pageViewElement.addEventListener('change', () => {
-    return pageViewElement.getAttribute('value');
-})
-
-const pageViews = function(pageViewRetrieve) {
-    if (pageViewRetrieve === '10k') {
+const pageViews = function (pageCountValue) {
+    if (pageCountValue === '10k') {
         return '10k PAGEVIEWS';
-    } else if (pageViewRetrieve ===  '50k') {
+    } else if (pageCountValue ===  '50k') {
         return '50K PAGEVIEWS';
-    } else if (pageViewRetrieve === '100k') {
+    } else if (pageCountValue === '100k') {
         return '100K PAGEVIEWS';
-    } else if (pageViewRetrieve === '500k') {
+    } else if (pageCountValue === '500k') {
         return '500K PAGEVIEWS';
-    } else if (pageViewRetrieve === '1M') {
+    } else if (pageCountValue === '1M') {
         return '1M PAGEVIEWS';
     }
 }
 
-let yearlyDiscountRetrieve = document.querySelector('.checkbox').checked;
+let pageViewElement = document.querySelector('.slider');
+let pageViewRetrieve = pageViewElement.addEventListener('change', () => {
+    return pageViews(pageViewElement.getAttribute('value'));
 
-const price = function(pageViewRetrieve, yearlyDiscountRetrieve) {
+})
+
+let yearlyDiscountRetrieve = document.querySelector('.checkbox').checked;
+const price = function (pageViewsSelected, yearlyDiscoutChecked) {
     let price = undefined;
-    if (pageViewRetrieve === '10k') {
+    if (pageViewsSelected === '10k') {
         price = 8;
-    } else if (pageViewRetrieve ===  '50k') {
+    } else if (pageViewsSelected ===  '50k') {
         price = 12;
-    } else if (pageViewRetrieve === '100k') {
+    } else if (pageViewsSelected === '100k') {
         price = 16;
-    } else if (pageViewRetrieve === '500k') {
+    } else if (pageViewsSelected === '500k') {
         price = 24;
-    } else if (pageViewRetrieve === '1M') {
+    } else if (pageViewsSelected === '1M') {
         price = 36;
     }
 
-    if (yearlyDiscountRetrieve) {
+    if (yearlyDiscoutChecked) {
         return price = (price*12)*0.75;
     } else {
         return price;
     }
 }
 
-console.log(pageViews);
-console.log(price);
+console.log(pageViews('50k'));
+console.log(price('50k', true));
