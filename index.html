@@ -14,28 +14,51 @@
                 <p>sign-up for our 30 day trial. No credit card required</p>
             </div>
             <div class="calc-container">
-                <div class="view-price-container">
-                    <div class="page-views">
-                        <!-- page view count linked to slider/radios "pageviews"-->
+                <form>
+                    <div class="view-price-container">
+                        <div class="page-views">
+                            <!-- page view count linked to slider/radios "pageviews"-->
+                        </div>
+                        <div class="price-per">
+                            <!-- price display linked with slider/radios "/month" OR "/year" -->
+                        </div>
                     </div>
-                    <div class="price-per">
-                        <!-- price display linked with slider/radios "/month" OR "/year" -->
+                    <div class="slider-container">
+                        <label for="10k">10K</label>
+                        <input type="radio" id="10k" name="slider">
+    
+                        <label for="50k">50K</label>
+                        <input type="radio" id="50k" name="slider">
+    
+                        <label for="100k">100k</label>
+                        <input type="radio" id="100k" name="slider">
+    
+                        <label for="500k">500K</label>
+                        <input type="radio" id="500k" name="slider">
+                        
+                        <label for="1m">1M</label>
+                        <input type="radio" id="1m" name="slider">
                     </div>
-                </div>
-                <div class="slider-container">
-                    <!-- radio buttons from-->
-                </div>
-                <div class="toggle-container">
-                    <!-- toggle container for Monthly/Yearly billing-->
-                </div>
-                <div class="end form container">
-                    <div>
-                        <!-- list of ad text-->
+                    <div class="toggle-container">
+                        <!-- toggle-->
+                        <!-- removed to use checkbox
+                        <label for="toggle">Monthly Billing</label> -->
+                        <input type="checkbox" id="toggle" class="checkbox"
+                         <label for="toggle">Yearly Billing</label>
+                         
+                         <div class="discount">
+                            25% discount
+                         </div>
                     </div>
-                    <div class = "button container">
-                        <!-- start my trial button-->
+                    <div class="end form container">
+                        <div>
+                            <!-- list of ad text-->
+                        </div>
+                        <div class = "button container">
+                            <!-- start my trial button-->
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </body>
