@@ -24,28 +24,11 @@ const monthOrYearSelector = document.querySelector('#month-or-year');
 
 const yearlyDiscountRetrieve = document.querySelector('#toggle')
 
-pageViewElement.addEventListener('change', () => {
-    let arrayIndex = pageViewElement.value
-    let pageViews = pageViewStrings[arrayIndex];
-    console.log(pageViews);
-    pageViewSelector.textContent = `${pageViews}`;
-    let pricePer = pricesArr[arrayIndex];
-    pricePerSelector.textContent = `$${pricePer}.00`
+pageViewElement.addEventListener('change', monthyYearlyPrice )
 
-    /*
-    if (!yearlyDiscountRetrieve.checked) {
-        pricePerSelector.textContent = `$${pricePer}.00`
-        monthOrYearSelector.textContent = '/month'
-    } else {
-        pricePer = (pricePer*12)*0.75;
-        pricePerSelector.textContent = `$${pricePer}.00`
-        monthOrYearSelector.textContent = '/year'
-    }
-    */
-}) 
+yearlyDiscountRetrieve.addEventListener('change', monthyYearlyPrice)
 
-
-yearlyDiscountRetrieve.addEventListener('change', () => {
+function monthyYearlyPrice() {
     let arrayIndex = pageViewElement.value
     let pricePer = pricesArr[arrayIndex]
     if (!yearlyDiscountRetrieve.checked) {
@@ -56,4 +39,4 @@ yearlyDiscountRetrieve.addEventListener('change', () => {
         pricePerSelector.textContent = `$${pricePer}.00`
         monthOrYearSelector.textContent = '/year'
     }
-})
+}
