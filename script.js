@@ -1,41 +1,46 @@
 'use strict'
 
-let element = document.querySelector('slider');
-element.addEventListener('change', () => {
-    return element.getAttribute('value');
+let pageViewElement = document.querySelector('.slider');
+let pageViewRetrieve = pageViewElement.addEventListener('change', () => {
+    return pageViewElement.getAttribute('value');
 })
 
-const pageViews = function() {
-    if (radio toggle id is 10k) {
+const pageViews = function(pageViewRetrieve) {
+    if (pageViewRetrieve === '10k') {
         return '10k PAGEVIEWS';
-    } ifelse (radio toggle id is 50k) {
+    } else if (pageViewRetrieve ===  '50k') {
         return '50K PAGEVIEWS';
-    } ifelse (radio toggle id is 100k) {
-        return '50K PAGEVIEWS';
-    } ifelse (radio toggle id is 500k) {
-        return '50K PAGEVIEWS';
-    } ifelse (radio toggle id is 1M) {
+    } else if (pageViewRetrieve === '100k') {
+        return '100K PAGEVIEWS';
+    } else if (pageViewRetrieve === '500k') {
+        return '500K PAGEVIEWS';
+    } else if (pageViewRetrieve === '1M') {
         return '1M PAGEVIEWS';
     }
 }
 
-const price = function() {
-    let price = null;
-    if (radio toggle id is 10k) {
+let yearlyDiscountRetrieve = document.querySelector('.checkbox').checked;
+
+const price = function(pageViewRetrieve, yearlyDiscountRetrieve) {
+    let price = undefined;
+    if (pageViewRetrieve === '10k') {
         price = 8;
-    } elseif (radio toggle id is 50k) {
+    } else if (pageViewRetrieve ===  '50k') {
         price = 12;
-    } elseif (radio toggle id is 100k) {
+    } else if (pageViewRetrieve === '100k') {
         price = 16;
-    } elseif (radio toggle id is 500k) {
+    } else if (pageViewRetrieve === '500k') {
         price = 24;
-    } elseif (radio toggle id is 1M) {
+    } else if (pageViewRetrieve === '1M') {
         price = 36;
     }
 
-    if (yearly billing is true) {
+    if (yearlyDiscountRetrieve) {
         return price = (price*12)*0.75;
     } else {
         return price;
     }
 }
+
+console.log(pageViews);
+console.log(price);
