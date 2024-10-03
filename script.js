@@ -16,7 +16,7 @@ const pricesArr = [
     36
 ]
 
-const pageViewSelector = document.querySelector('#page-views');
+
 const pageViewElement = document.querySelector('#slider');
 
 const pricePerSelector = document.querySelector('#price-per');
